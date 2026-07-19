@@ -1,0 +1,530 @@
+// "sass" : "node-sass -w  sassfile/  -o destfolder/  --recursive"
+$primarycolor:#f05f40;
+$secondrycolor:#212567;
+$home-bg:url(../img/wave.svg);
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+// custom scroll bar
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $primarycolor;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Signika', sans-serif;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+//extends
+.f-m {
+    float: left;
+    margin-top: 10px;
+}
+
+.h1 {
+    font-size: 3rem;
+    color: white;
+}
+
+.span {
+    display: block;
+    width: 60px;
+    height: 5px;
+    margin: 20px auto;
+    background-color: $primarycolor;
+    color: white;
+}
+
+.p {
+    color: white;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.button {
+    padding: 15px;
+    background-color: $primarycolor;
+    color: white;
+    border: 1px solid $primarycolor;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+        background-color: white;
+        color: $primarycolor;
+    }
+}
+
+
+//mixins
+@mixin transition {
+    transition: all 0.5s ease-in-out;
+}
+
+// start header
+header {
+    overflow: hidden;
+    width: 100%;
+    background-color: #333;
+
+
+    .logo {
+        @extend .f-m;
+        width: 30%;
+
+        h2 {
+            color: #ccc
+        }
+    }
+
+    .bars {
+        display: none;
+        font-size: 20px;
+        color: white;
+    }
+
+    .menu {
+        ul {
+            @extend .f-m;
+            list-style: none;
+            width: 65%;
+            text-align: right;
+            padding-top: 8px;
+            padding-bottom: 6px;
+
+            li {
+                a {
+                    padding: 5px 10px;
+                    text-decoration: none;
+                    color: #ccc;
+                    font-size: 19px;
+
+                    &:hover {
+                        @include transition;
+                        color: $primarycolor;
+                    }
+
+
+
+                }
+
+            }
+
+        }
+    }
+}
+
+//start home
+.home {
+    height: 100vh;
+    width: 100%;
+    background: $home-bg;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    // clip-path: polygon(100% 0%, 0% 0% , 0% 65%, 1% 64.95%, 2% 64.8%, 3% 64.6%, 4% 64.3%, 5% 63.9%, 6% 63.45%, 7% 62.9%, 8% 62.25%, 9% 61.55%, 10% 60.8%, 11% 59.95%, 12% 59.05%, 13% 58.1%, 14% 57.1%, 15% 56.05%, 16% 55%, 17% 53.9%, 18% 52.8%, 19% 51.65%, 20% 50.5%, 21% 49.35%, 22% 48.2%, 23% 47.05%, 24% 45.9%, 25% 44.8%, 26% 43.75%, 27% 42.75%, 28% 41.75%, 29% 40.8%, 30% 39.9%, 31% 39.1%, 32% 38.35%, 33% 37.65%, 34% 37.05%, 35% 36.5%, 36% 36.05%, 37% 35.65%, 38% 35.35%, 39% 35.15%, 40% 35.05%, 41% 35%, 42% 35.05%, 43% 35.2%, 44% 35.45%, 45% 35.75%, 46% 36.15%, 47% 36.65%, 48% 37.2%, 49% 37.85%, 50% 38.55%, 51% 39.35%, 52% 40.2%, 53% 41.1%, 54% 42.05%, 55% 43.05%, 56% 44.1%, 57% 45.15%, 58% 46.3%, 59% 47.4%, 60% 48.55%, 61% 49.7%, 62% 50.85%, 63% 52%, 64% 53.15%, 65% 54.25%, 66% 55.35%, 67% 56.4%, 68% 57.45%, 69% 58.4%, 70% 59.35%, 71% 60.2%, 72% 61.05%, 73% 61.8%, 74% 62.45%, 75% 63.05%, 76% 63.6%, 77% 64.05%, 78% 64.4%, 79% 64.7%, 80% 64.85%, 81% 65%, 82% 65%, 83% 64.9%, 84% 64.75%, 85% 64.5%, 86% 64.2%, 87% 63.75%, 88% 63.25%, 89% 62.7%, 90% 62.05%, 91% 61.3%, 92% 60.5%, 93% 59.65%, 94% 58.75%, 95% 57.8%, 96% 56.8%, 97% 55.75%, 98% 54.65%, 99% 53.55%, 100% 52.4%);
+
+
+    .home-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -65%);
+        text-align: center;
+
+        h1 {
+            @extend .h1;
+
+        }
+
+        span {
+            @extend .span;
+        }
+
+        p {
+            @extend .p;
+        }
+
+        button {
+            @include transition;
+            @extend .button;
+        }
+
+    }
+
+}
+
+//start need
+.need {
+    clip-path: polygon(0 0, 100% 21%, 100% 93%, 0 65%);
+    margin: 60px 0;
+    padding: 40px;
+    background-color: $primarycolor;
+    text-align: center;
+    color: white;
+    height: 398px;
+
+    h1 {
+        @extend .h1;
+        font-size: 1.9rem;
+        margin-top: 30px;
+    }
+
+    span {
+        @extend .span;
+        background-color: white;
+    }
+
+    p {
+        @extend .p
+    }
+
+    button {
+        @include transition;
+        @extend .button;
+        background-color: white;
+        color: $primarycolor;
+        margin-bottom: 30px;;
+        &:hover {
+            background-color: $primarycolor;
+            color: white;
+        }
+    }
+}
+
+// start service
+.services {
+    margin: 7rem 0;
+    background: white;
+    text-align: center;
+
+    h2 {
+        @extend .h1;
+        color: $primarycolor;
+        font-size: 1.9rem;
+    }
+
+    span {
+        @extend .span;
+    }
+
+    .service-item {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+
+        .item {
+            border: 1px solid $primarycolor;
+            padding: 20px;
+
+            &:hover {
+                background-color: $primarycolor;
+                color: white;
+                cursor: pointer;
+                @include transition;
+
+                i,
+                p,
+                h3 {
+                    color: white;
+                }
+            }
+
+            h3 {
+                margin-bottom: 1rem;
+                color: #333;
+
+            }
+
+            p {
+                color: $secondrycolor;
+            }
+        }
+
+
+    }
+
+
+
+}
+
+// changing services icons color
+@for $i from 1 through 4 {
+    .service-item .item .fa-#{$i} {
+        color: $primarycolor;
+        margin-bottom: 15px;
+    }
+}
+
+// start images section
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 140px;
+    margin-bottom: 140px;
+
+    .img-box {
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($primarycolor, 0.5);
+            opacity: 0;
+            cursor: pointer;
+            @include transition;
+        }
+
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+
+            &::before {
+                content: "\f0c1    \f002";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                font-size: 50px;
+                color: white;
+                z-index: 999;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                cursor: pointer;
+
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+
+// start download
+.download {
+    clip-path: polygon(100% 0, 0 37%, 0 100%, 100% 59%);
+    background-color: $secondrycolor;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    margin-bottom: 100px;
+    font-size: 50px;
+
+    h1 {
+        @extend .h1;
+        font-size: 40px;
+        margin-top: 65px;
+        margin-bottom: 18px;
+    }
+
+    span {
+        @extend .span
+    }
+
+    button {
+        @extend .button;
+        background-color: white;
+        color: $secondrycolor;
+        width: 200px;
+        margin-bottom: 65px;
+        @include transition
+    }
+
+
+}
+
+.contact {
+    text-align: center;
+    padding: 20px;
+    background-color: #F1F2F3;
+
+    h2 {
+        @extend .h1;
+        color: $secondrycolor;
+
+        font-size: 40px;
+        margin-top: 50px;
+        margin-bottom: 18px;
+    }
+
+    span {
+        @extend .span
+    }
+
+    .cards {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+
+        i {
+            font-size: 40px;
+            color: $secondrycolor;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+
+        }
+    }
+}
+
+
+// media query 
+
+
+//Xs devices
+
+@media (max-width:767px){
+    //start need
+    .need {
+        clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 100%) !important;
+   
+    }
+}
+
+
+
+
+
+
+// small devices
+@media (max-width:768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    // start header
+    header {
+        position: static;
+        background-color: #333;
+        text-align: center;
+
+        .logo {
+            padding-bottom: 10px;
+        }
+
+        .bars {
+            display: block;
+            text-align: right;
+            cursor: pointer;
+            margin: auto;
+            position: absolute;
+            transform: translate(82vw, 3vh);
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .menu.active {
+            background-color: white;
+            width: 133px;
+            display: grid;
+            position: absolute;
+            top: 60;
+            z-index: 1;
+            right: 20px;
+
+            ul:not(:last-child) {
+                li {
+                    text-align: center !important;
+
+                }
+            }
+
+
+        }
+
+
+    }
+
+    // start home
+    .home {
+        height: 120vh;
+
+        h1 {
+            font-size: 40px !important;
+        }
+    }
+
+
+
+
+    //start need
+
+    .need {
+        clip-path: polygon(0 10%, 100% 31%, 100% 100%, 0 87%);
+    }
+
+
+    // start services
+    .services {
+
+        .service-item {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+
+
+    //start imaqges
+    .images {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+    //start download
+
+    .download {
+        clip-path: polygon(0 24%, 100% 0, 100% 75%, 0 100%);
+    }
+
+}

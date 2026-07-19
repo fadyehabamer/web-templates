@@ -1,0 +1,188 @@
+@import '_root';
+@import '_variable';
+
+@mixin flex($justify-content, $alignnment, $direction) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $alignnment;
+    flex-flow: $direction;
+}
+main{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right ,$color1 70% , $color4 30% );
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 45.7%;
+        height: 100%;
+        width: 100%;
+        background-image: url('batman.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: -1;
+    }
+    .nav{
+        height: 8vh;
+        width: 100%;
+        nav{
+            @include flex(space-between, center, row);
+            padding: 0.5rem 0;
+            .logo{
+                // background-color: rgb(9, 77, 9);
+                flex-basis: 70%;
+                @include flex(space-between, center, row);
+                h2{
+                    flex: 1;
+                    margin: 0 1rem;
+                    color: $color2;
+                    font-family: 'Bebas neue';
+                    font-weight: 400;
+                    font-size: 2rem;
+                    cursor: pointer;
+                    span{
+                        color: #052c75;
+                        font-family: 'Bebas neue';
+                        font-weight: 400;
+                    }
+                }
+                ul{
+                    flex: 2;
+                    @include flex(space-evenly, center, row);
+                    li{
+                        font-family: 'Bebas neue';
+                        color: $color3;
+                        cursor: pointer;
+                        &:hover{
+                            border-bottom: 2px solid #981C2A;
+                            color: $color2;
+                        }
+                    }
+                }
+            }
+            .menu{
+                flex-basis: 30%;
+                // background-color: rgb(59, 10, 10);
+                @include flex(flex-end, center, row);
+                svg{
+                    width: 30px;
+                    height: 30px;
+                    margin: 0 1rem;
+                    fill: $color1;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .sec1{
+        @include flex(flex-start, center, row);
+        height: 100%;
+        width: 70%;
+        .box1{
+            height: 100%;
+            width: 6%;
+            @include flex(space-around, center, column);
+            .wrapper{
+                writing-mode: vertical-rl;
+                text-orientation: sideways;
+                color: $color2;
+                font-size: 0.8rem;
+                font-weight: 400;
+                font-family: 'Bebas neue';
+                letter-spacing: 5px;
+                transform: scaleX(0.8);
+                opacity: 0.5;
+            }
+            .wrapperx{
+                @include flex(space-around, center, column);
+                height: 30%;
+                hr{
+                    height: 100%;
+                    width: 1px;
+                    background-color: $color2;
+                    opacity: 0.5;
+                }
+                svg{
+                    width: 30px;
+                    fill: $color4;
+                    margin: 1.5rem 0;
+                }
+            }
+        }
+        .box2{
+            height: 100%;
+            width: 100%;
+            @include flex(flex-start ,center, row);
+            .info{
+                margin-left: 5rem;
+                @include flex(space-around, flex-start, column);
+                h5{
+                    color: $color2;
+                    font-weight: 400;
+                    font-family: 'Gugi';
+                    margin: 2rem 0;
+                }
+                h1{
+                    color: $color2;
+                    font-weight: 600;
+                    font-family: 'Gugi';
+                    font-size: 4rem;
+                    text-transform: uppercase;
+                }
+                button{
+                    padding: 0.6rem 2.4rem;
+                    border-radius: 0.5rem;
+                    background-color: $color4;
+                    color: $color1;
+                    margin: 2rem 0;
+                    text-transform: uppercase;
+                    font-family: 'Gugi';
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:550px){
+    main{
+        background: linear-gradient(to right ,$color1 100% , $color3 0% );
+        &::before{
+            display: none;
+        }
+        
+        .nav{
+            nav{
+                .logo{
+                    ul{
+                        display : none ;
+                    }
+                }
+                .menu{
+                    svg{
+                        fill: $color2;
+                    }
+                }
+            }
+        }
+
+        .sec1{
+            width: 100%;
+            .box2{
+                @include flex(center, center, row);
+                width: 100%;
+                padding: 0 1rem;
+                .info{
+                    margin: 0;
+                }
+            }
+            
+        }
+    }
+}
