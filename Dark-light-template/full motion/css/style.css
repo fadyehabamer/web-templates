@@ -62,7 +62,7 @@ main .content {
   padding: 20px;
 }
 .content .card .main-text h4 {
-  font-size: 18;
+  font-size: 18px;
   color: rgb(49, 49, 49);
   margin-top: 15px;
 }
@@ -223,6 +223,12 @@ footer ul li {
 .darkmode-toggle {
   z-index: 100;
   outline: none;
+}
+/* the rules above remove the outline; keep one for keyboard focus */
+.content .card .main-text button:focus-visible,
+.darkmode-toggle:focus-visible {
+  outline: 2px solid #100f2c;
+  outline-offset: 2px;
 }
 .darkmode--activated header{
   background-color: #111111;
