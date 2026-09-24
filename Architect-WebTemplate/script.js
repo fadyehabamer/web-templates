@@ -4,8 +4,18 @@ window.onload = () => {
   }, 4000);
 };
 
-document.querySelector(".hamburger-menu").addEventListener("click", () => {
-  document.querySelector(".container").classList.toggle("change");
+const hamburger = document.querySelector(".hamburger-menu");
+const toggleMenu = () => {
+  const open = document.querySelector(".container").classList.toggle("change");
+  hamburger.setAttribute("aria-expanded", open);
+};
+hamburger.addEventListener("click", toggleMenu);
+// the menu button is a <div>: make Enter/Space work for keyboard users
+hamburger.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    toggleMenu();
+  }
 });
 
 document.querySelector(".scroll-btn").addEventListener("click", () => {

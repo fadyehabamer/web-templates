@@ -8,6 +8,9 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Josefin+Slab:ital,wght@0,400;0,600;1,300;1,400;1,600&family=Muli:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
@@ -29,7 +32,7 @@
     </div>
 
     <div class="container">
-      <div class="hamburger-menu">
+      <div class="hamburger-menu" role="button" tabindex="0" aria-label="Toggle menu" aria-expanded="false">
         <div class="line line-1"></div>
         <div class="line line-2"></div>
         <div class="line line-3"></div>
@@ -37,7 +40,7 @@
       </div>
       <header class="header">
         <div class="img-wrapper">
-          <img src="images/bg.jpg" />
+          <img src="images/bg.jpg" alt="" />
         </div>
         <div class="banner">
           <h1>Architecture & Interior Design</h1>
@@ -65,9 +68,9 @@
           </li>
         </ul>
         <div class="social-media">
-          <a href=""><i class="fab fa-facebook-f"></i></a>
-          <a href=""><i class="fab fa-instagram"></i></a>
-          <a href=""><i class="fab fa-twitter"></i></a>
+          <a href="" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
         </div>
       </section>
 
@@ -144,7 +147,7 @@
             </p>
           </div>
           <div class="about-us-img-wrapper">
-            <img src="images/house.png" />
+            <img src="images/house.png" alt="House exterior" />
           </div>
         </div>
       </section>
@@ -207,16 +210,16 @@
             <h1 class="contact-heading">Contact</h1>
             <form>
               <div class="input-group">
-                <input type="text" class="field" />
-                <label class="input-label">Full Name</label>
+                <input type="text" class="field" id="contact-name" />
+                <label class="input-label" for="contact-name">Full Name</label>
               </div>
               <div class="input-group">
-                <input type="email" class="field" />
-                <label class="input-label">Email</label>
+                <input type="email" class="field" id="contact-email" />
+                <label class="input-label" for="contact-email">Email</label>
               </div>
               <div class="input-group">
-                <textarea class="field"></textarea>
-                <label class="message">Message</label>
+                <textarea class="field" id="contact-message"></textarea>
+                <label class="message" for="contact-message">Message</label>
               </div>
               <input type="submit" class="submit-btn" value="Submit" />
             </form>
@@ -230,14 +233,14 @@
             Copyright &copy; 2022, All Rights Reserved
           </p>
           <div class="social-list">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
           </div>
         </div>
       </footer>
-      <a href="#" class="scroll-btn">
-        <i class="fas fa-arrow-up"></i>
+      <a href="#" class="scroll-btn" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
       </a>
     </div>
 
