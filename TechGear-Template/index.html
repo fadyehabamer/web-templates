@@ -15,7 +15,7 @@
                 <div class="logo float-l">
                     <img src="img/Logo .png" alt="Logo" class="resp-img">
                 </div>
-                <button class="menu float-r visible-xs visible-sm" id="menu"><span class="fas fa-bars"></span></button>
+                <button class="menu float-r visible-xs visible-sm" id="menu" aria-label="Toggle menu" aria-controls="nav-bar"><span class="fas fa-bars" aria-hidden="true"></span></button>
                 <nav class="nav-bar float-l" id="nav-bar">
                     <ul class="clasic-list">
                         <li class="inline-block"><a href="#home" class="active">Home</a></li>
@@ -172,18 +172,18 @@
                 </div>
                 <div class="social">
                     <h3 class="con-name">Social Media</h3>
-                    <a href= "#"><span class="fab fa-facebook-f"></a></span>
-                    <a href= "#"><span class="fab fa-instagram"></a></span>
-                    <a href= "#"><span class="fab fa-twitter"></a></span>
-                    <a href= "#"><span class="fab fa-linkedin-in"></a></span>
+                    <a href="#" aria-label="Facebook"><span class="fab fa-facebook-f" aria-hidden="true"></span></a>
+                    <a href="#" aria-label="Instagram"><span class="fab fa-instagram" aria-hidden="true"></span></a>
+                    <a href="#" aria-label="Twitter"><span class="fab fa-twitter" aria-hidden="true"></span></a>
+                    <a href="#" aria-label="LinkedIn"><span class="fab fa-linkedin-in" aria-hidden="true"></span></a>
                 </div>
             </div>
             <form class="sec-form float-l">
                 <p class="begin">feel free to send us your massage</p>
-                <input type="text" placeholder="Your Name..." required class="inpt name inline-block">
-                <input type="email" placeholder="Your Email..." required class="inpt email inline-block">
-                <input type="email" placeholder="Subject" class="inpt subject block">
-                <textarea name="" cols="30" rows="10" class="txt-erea block" placeholder="Your Massage" required></textarea>
+                <input type="text" placeholder="Your Name..." required class="inpt name inline-block" aria-label="Your name">
+                <input type="email" placeholder="Your Email..." required class="inpt email inline-block" aria-label="Your email">
+                <input type="text" placeholder="Subject" class="inpt subject block" aria-label="Subject">
+                <textarea name="" cols="30" rows="10" class="txt-erea block" placeholder="Your Massage" aria-label="Your message" required></textarea>
                 <button class="btn block">SUBMIT</button>
             </form>
             <div class="clearfix"></div>
@@ -243,7 +243,7 @@
     <!-- End Footer -->
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
             $("#menu").click(function(){
