@@ -87,6 +87,12 @@ body {
         background-color: white;
         color: $primarycolor;
     }
+
+    // outline: none above hides keyboard focus; restore it for keyboard users
+    &:focus-visible {
+        outline: 2px solid $primarycolor;
+        outline-offset: 2px;
+    }
 }
 
 
@@ -469,7 +475,7 @@ header {
             width: 133px;
             display: grid;
             position: absolute;
-            top: 60;
+            top: 60px;
             z-index: 1;
             right: 20px;
 

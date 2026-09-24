@@ -79,6 +79,11 @@ body {
   color: #f05f40;
 }
 
+.button:focus-visible, .home .home-content button:focus-visible, .need button:focus-visible, .download button:focus-visible {
+  outline: 2px solid #f05f40;
+  outline-offset: 2px;
+}
+
 header {
   overflow: hidden;
   width: 100%;
@@ -391,7 +396,7 @@ header .menu ul li a:hover {
     display: -ms-grid;
     display: grid;
     position: absolute;
-    top: 60;
+    top: 60px;
     z-index: 1;
     right: 20px;
   }
