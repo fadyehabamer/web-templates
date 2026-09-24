@@ -53,6 +53,13 @@ h1 {
   color: white;
   transition:all  0.5s ease-in-out;
 }
+/* buttons and form fields set outline: none; keep a keyboard focus ring */
+.common-btn:focus-visible,
+.contact form input:focus-visible,
+.menu-btn:focus-visible {
+  outline: 2px solid #f67c92;
+  outline-offset: 2px;
+}
 /*end global  */
 
 /* start header */

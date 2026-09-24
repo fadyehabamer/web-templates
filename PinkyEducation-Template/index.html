@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Pinky Education</title>
 </head>
 <body>
 
@@ -43,7 +44,7 @@
         </ul>
     </nav>
     <!-- navigation icon -->
-    <img src="images/menu.png" alt="menu" class="menu-btn" id="menu-btn">
+    <img src="images/menu.png" alt="menu" class="menu-btn" id="menu-btn" role="button" tabindex="0" aria-controls="side-nav" aria-expanded="false">
 
     <!--................................end nav.......................... -->
 
@@ -181,9 +182,9 @@
                     Sign up to join <br> our learning community
                 </h1>
                 <form action="">
-                    <input type="text" placeholder="Enter your Name" >
-                    <input type="email" placeholder="Enter your Email" >
-                    <input type="password" placeholder="Enter your password" >
+                    <input type="text" placeholder="Enter your Name" aria-label="Name" >
+                    <input type="email" placeholder="Enter your Email" aria-label="Email" >
+                    <input type="password" placeholder="Enter your password" aria-label="Password" >
                     <div class="btn-box">
                         <button class="common-btn" > Sign up </button>
                         <button class="common-btn" > Start free trial </button>
