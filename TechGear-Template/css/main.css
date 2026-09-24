@@ -702,6 +702,14 @@ a{
     outline: none;
     border: none;
 }
+/* the rules above remove the outline; keep one for keyboard focus */
+.btn:focus-visible,
+.home .menu:focus-visible,
+.inpt:focus-visible,
+.txt-erea:focus-visible{
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
 /* End Framework */
 
 

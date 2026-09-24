@@ -362,4 +362,9 @@ main .sec1 .box2 .info button {
     margin: 0;
   }
 }
+/* the reset removes every outline; keep one for keyboard focus */
+:focus-visible {
+  outline: 2px solid #052c75;
+  outline-offset: 2px;
+}
 /*# sourceMappingURL=style.css.map */

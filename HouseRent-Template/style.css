@@ -81,8 +81,20 @@ header {
   cursor: pointer;
   display: none;
 }
+/* visually hidden rather than display: none, so the menu toggle can be
+   reached and operated (Space) from the keyboard */
 #menu {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+#menu:focus-visible + label #menu-icon,
+.newsletter form input:focus-visible,
+.login-container form input:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
 }
 .btn {
   padding: 8px 22px;

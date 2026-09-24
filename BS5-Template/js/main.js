@@ -58,6 +58,13 @@ const filterListItems = document.querySelectorAll(".list-group li"),
   filteredItems = document.querySelectorAll(".filterd-items a");
 
 filterListItems.forEach(list => {
+  // the filter tabs are <li>s: let Enter/Space activate them like a click
+  list.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      list.click();
+    }
+  })
   list.addEventListener("click", () => {
     document.querySelector(".list-group li.active").classList.remove("active");
     list.classList.add("active");

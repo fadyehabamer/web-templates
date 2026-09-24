@@ -13,3 +13,5 @@ var options = {
   
   const darkmode = new Darkmode(options);
   darkmode.showWidget();
+  // the widget's only content is the 🌓 emoji; give the toggle a real name
+  darkmode.button.setAttribute("aria-label", "Toggle dark mode");

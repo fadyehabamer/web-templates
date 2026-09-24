@@ -716,3 +716,11 @@ section.app_section {
 }
 
 /* end footer section*/
+
+/* keep a visible focus ring for keyboard users (.btn:focus drops the outline) */
+.btn:focus-visible,
+.custom_nav-container .navbar-toggler:focus-visible,
+.info_section .info_form form input:focus-visible {
+  outline: 2px solid currentColor !important;
+  outline-offset: 2px;
+}
